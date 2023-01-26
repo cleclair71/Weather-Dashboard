@@ -1,10 +1,93 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
+h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+h1 { font-size: 34px; }
+h2 { font-size: 28px; line-height: 38px; }
+h3 { font-size: 22px; line-height: 32px; }
+h4 { font-size: 20px; }
+h5 { font-size: 17px; }
+h6 { font-size: 12px; }
+p { margin: 0 0 20px; line-height: 1.7; }
+p:last-child { margin: 0px; }
+/* ul, ol { } */
+a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+a:focus, a:hover { text-decoration: none; color: #f85759; }
+
+
+
+.page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
+.page-caption { padding-top: 170px; padding-bottom: 174px; }
+.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: left; }
+
+.card-section { position: relative; bottom: 60px; }
+.card-block { padding: 80px; }
+.section-title { margin-bottom: 60px; }
+
+.srchBar {
+    margin-left: 80%;
+    margin-bottom: 60px;
+    min-height: fit-content;
+    
+}
 body {
   font-family: 'Montserrat', sans-serif;
   background: #112233;
 }
+ .container {
+    margin:auto;
+} 
 
+body {
+    /* color: #fff; */
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+#current{
+    background-image: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg");
+    background-size: cover;
+    width: 600px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #9E9E9E;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.time-font {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 3px;
+    vertical-align: top;
+}
+
+.sm-font {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 3px;
+    vertical-align: top;
+}
+
+.med-font {
+    margin-top: 20px;
+  font-size: 21px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.large-font {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 3px;
+    vertical-align: top;
+  color: #fff;
+}
 /* .col-4 {
     flex-basis: auto;
 }  */
@@ -13,7 +96,8 @@ body {
   height: auto;
   width: auto;
   background: #fff;
-  box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #9E9E9E;
   overflow: hidden;
 }
 .weather-card .top {
@@ -149,4 +233,63 @@ body {
   background: url("http://img.freepik.com/free-vector/girl-with-umbrella_1325-5.jpg?size=338&ext=jpg") no-repeat;
   background-size: cover;
   background-position: center center;
+}
+/* buttons */
+form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 300px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
 }

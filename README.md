@@ -105,7 +105,7 @@ Cassie LeClair - cassieleclair71@gmail.com
 * [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
 * [15 Gorgeous CSS Text Animation Effects](https://alvarotrigo.com/blog/css-text-animations/)
 * [FLEXBOX STICKY FOOTER](https://startbootstrap.com/snippets/sticky-footer-flexbox)
-* [Bootstrap Video Background](https://jsfiddle.net/StartBootstrap/enajc82d/)
+* [Bootstrap 4 weather widget with time and date](https://bbbootstrap.com/snippets/weather-widget-time-and-date-51644824)
 
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
