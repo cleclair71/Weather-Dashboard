@@ -25,12 +25,7 @@ a:focus, a:hover { text-decoration: none; color: #f85759; }
 .card-block { padding: 80px; }
 .section-title { margin-bottom: 60px; }
 
-.srchBar {
-    margin-left: 80%;
-    margin-bottom: 60px;
-    min-height: fit-content;
-    
-}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: #112233;
@@ -234,7 +229,18 @@ body {
   background-size: cover;
   background-position: center center;
 }
-/* buttons */
+/* search city */
+
+
+.card-body {
+    height: 160px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fa:hover .card-body {
+    opacity: 1;
+}
 form{
     position: relative;
     top: 50%;
@@ -246,7 +252,7 @@ form{
     background: white;
     box-sizing: border-box;
     border-radius: 25px;
-    border: 4px solid white;
+    border: 4px solid rgb(161, 161, 161);
     padding: 5px;
 }
 
@@ -258,7 +264,8 @@ input{
     height: 42.5px;
     line-height: 30px;
     outline: 0;
-    border: 0;
+    border: 1px;
+    border-color: #000;
     display: none;
     font-size: 1em;
     border-radius: 20px;
@@ -278,6 +285,7 @@ input{
     text-align: center;
     font-size: 1.2em;
     transition: all 1s;
+    display: block !important;
 }
 
 form:hover{
@@ -287,6 +295,11 @@ form:hover{
 
 form:hover input{
     display: block;
+}
+.srchBar {
+    position: absolute;
+    top: 30px;
+    right: 10px;
 }
 
 form:hover .fa{
