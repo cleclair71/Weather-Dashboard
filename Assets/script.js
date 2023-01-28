@@ -144,6 +144,7 @@
 
 // btnBuild();
 
+
 function getInfo() {
     const newName = document.getElementById("search-input");
     const cityName = document.getElementById("display-city");
