@@ -1,15 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 
-body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
-h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+
+/* add media queries for weather cards*/
+/* add current weather card*/
+/* add media queries for weather cards*/
+/* add media queries for weather cards*/
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #271334; }
+h1, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
 h1 { font-size: 34px; }
-h2 { font-size: 28px; line-height: 38px; }
+h2 { color: #4c3550; }
 h3 { font-size: 22px; line-height: 32px; }
 h4 { font-size: 20px; }
 h5 { font-size: 17px; }
 h6 { font-size: 12px; }
-p { margin: 0 0 20px; line-height: 1.7; }
+p { margin: 0 0 20px; line-height: 1; }
 p:last-child { margin: 0px; }
 /* ul, ol { } */
 a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
@@ -28,7 +33,6 @@ video {
     z-index: -1;
     object-position: center;
     object-fit: cover;
-    
   }
 
   header {
@@ -45,16 +49,20 @@ video {
   }
 
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
-.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: left; }
+.page-title { font-size: 56px; line-height: 1; color: #fff; font-weight: 600; text-align: left; }
 
 .card-section { position: relative; bottom: 60px; }
-.card-block { padding: 80px; }
-.section-title { margin-bottom: 60px; }
-
+.card-block { 
+    padding: 80px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #202020;
+    background-color: rgba(255, 255, 255, 0.568);
+}
+.section-title { margin-bottom: 60px; font-size: 26px; line-height: 1; text-align: center; color: #4c3550, font-weight: 600; }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #112233;
+  background: #271334;
 }
  .container {
     margin:auto;
@@ -116,6 +124,7 @@ body {
   margin: 60px auto;
   height: auto;
   width: auto;
+  min-width: 228px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 8px 2px #9E9E9E;
@@ -259,6 +268,7 @@ body {
 
 
 .card {
+    margin-right: 10px;
     height: 190px;
     opacity: 0.0;
     -webkit-transition: all 500ms ease-in-out;
@@ -269,7 +279,7 @@ body {
 }
 
 form:hover + .card {
-    opacity: 1.0;
+    opacity: 0.6;
 }
 form{
     position: relative;
@@ -279,10 +289,10 @@ form{
     transition: all 1s;
     width: 50px;
     height: 50px;
-    background: white;
+    background: rgba(255, 255, 255, 0.74);
     box-sizing: border-box;
     border-radius: 25px;
-    border: 4px solid rgb(161, 161, 161);
+    border: 4px solid #4c3550;
     padding: 5px;
 }
 
@@ -295,7 +305,7 @@ input{
     line-height: 30px;
     outline: 0;
     border: 1px;
-    border-color: #000;
+    border-color: #4c3550;
     display: none;
     font-size: 1em;
     border-radius: 20px;
@@ -311,7 +321,7 @@ input{
     top: 0;
     right: 0;
     border-radius: 50%;
-    color: #07051a;
+    color: #4c3550;
     text-align: center;
     font-size: 1.2em;
     transition: all 1s;
@@ -333,6 +343,10 @@ form:hover input{
 }
 
 form:hover .fa{
-    background: #07051a;
-    color: white;
+    background: #4c3550;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+footer {
+    background-color: #4c3550;
 }
