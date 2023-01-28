@@ -17,7 +17,33 @@ a:focus, a:hover { text-decoration: none; color: #f85759; }
 
 
 
-.page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-position: center;
+    object-fit: cover;
+    
+  }
+
+  header {
+    position: fixed;
+    font-family: Arial;
+    color: white;
+    width: 98%;
+    margin: 10px;
+    border: 1px solid white;
+    background-color: black;
+    /* Add this */
+    text-align: center;
+    overflow: hidden;
+  }
+
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
 .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: left; }
 
@@ -232,14 +258,18 @@ body {
 /* search city */
 
 
-.card-body {
-    height: 160px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.card {
+    height: 190px;
+    opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
-.fa:hover .card-body {
-    opacity: 1;
+form:hover + .card {
+    opacity: 1.0;
 }
 form{
     position: relative;

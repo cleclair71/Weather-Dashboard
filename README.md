@@ -103,7 +103,7 @@ Cassie LeClair - cassieleclair71@gmail.com
 * [Document.getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
 * [Logical AND (&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
 * [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
-* [15 Gorgeous CSS Text Animation Effects](https://alvarotrigo.com/blog/css-text-animations/)
+* [HTML/CSS video as background for the header](https://stackoverflow.com/questions/54208390/html-css-video-as-background-for-the-header)
 * [Animated Search Bar Using Only HTML and CSS](https://foolishdeveloper.com/animated-search-bar-using-only-html-and-css/)
 * [Bootstrap 4 weather widget with time and date](https://bbbootstrap.com/snippets/weather-widget-time-and-date-51644824)
 

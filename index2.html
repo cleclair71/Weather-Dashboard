@@ -17,7 +17,11 @@
 <div class="page-header">
     <div class="container">
         <div class="row">
+            <div id="overlay">
+                <video autoplay muted loop src="Assets\Images\Lake\Lake-sunset\Lake-sunset.mp4"></video>
+            </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
                 <div class="page-caption">
                     <h1 class="page-title">Weather <br> Dashboard</h1>
 
@@ -25,7 +29,7 @@
                         <form action="">
                             <input id="search-input" type="search" placeholder="Enter a City Name">
                             <i class="fa fa-search"></i>
-                          </form>
+                        </form>
                         <div class="card">
                             <div class="card-body">
                                 <!-- <input id="search-input" type="text" placeholder="Enter a City Name"
@@ -34,10 +38,9 @@
                                     <button id="searchbtn" class="d-grid gap-2 btn btn-dark" type="button">
                                         Search
                                     </button> -->
-                                    <div class="history">
-                                        <h5> Recent Searches: </h5>
-                                        <div id="recent"></div>
-                                    </div>
+                                <div class="history">
+                                    <h5> Recent Searches: </h5>
+                                    <div id="recent"></div>
                                 </div>
                             </div>
                         </div>
@@ -45,8 +48,9 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>
 </div>
 </div>
 <!-- /.page-header-->
