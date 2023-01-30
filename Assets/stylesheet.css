@@ -1,25 +1,55 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  .page-title {
+    animation: slide-in 1000ms;
+  }
 
+ 
+  
 /* add media queries for weather cards*/
 /* add current weather card*/
 /* add media queries for weather cards*/
 /* add media queries for weather cards*/
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #271334; }
 h1, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
-h1 { font-size: 34px; }
-h2 { color: #4c3550; }
+h1 { font-size: 56px; }
+h2 { 
+    font-size: 26px; 
+    line-height: 1; 
+    color: #663b54;
+    font-weight: 600; 
+    letter-spacing:-2px; 
+    text-transform:uppercase;
+     }
+
 h3 { font-size: 22px; line-height: 32px; }
 h4 { font-size: 20px; }
 h5 { font-size: 17px; }
 h6 { font-size: 12px; }
 p { margin: 0 0 20px; line-height: 1; }
 p:last-child { margin: 0px; }
-/* ul, ol { } */
+/* ul, ol { } */ 
 a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
-a:focus, a:hover { text-decoration: none; color: #f85759; }
+a:focus, a:hover { text-decoration: none;}
 
+.twoheading {
+        animation: slide-in 1000ms;
+        font-size: 26px; 
+    line-height: 1; 
+    color: #ffffff;
+    font-weight: 600; 
+    letter-spacing:-2px; 
+    text-transform:uppercase;
+}
 
 
 video {
@@ -38,12 +68,11 @@ video {
   header {
     position: fixed;
     font-family: Arial;
-    color: white;
+    color: rgba(255, 255, 255, 0.253);
     width: 98%;
     margin: 10px;
     border: 1px solid white;
     background-color: black;
-    /* Add this */
     text-align: center;
     overflow: hidden;
   }
@@ -60,10 +89,6 @@ video {
 }
 .section-title { margin-bottom: 60px; font-size: 26px; line-height: 1; text-align: center; color: #4c3550, font-weight: 600; }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #271334;
-}
  .container {
     margin:auto;
 } 
@@ -73,11 +98,11 @@ body {
     overflow-x: hidden;
     height: 100%;
     background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+  background: #271334;
 }
 
 #current{
-    background-image: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg");
-    background-size: cover;
     width: 600px;
     height: 350px;
     border-radius: 10px;
@@ -124,15 +149,16 @@ body {
   margin: 60px auto;
   height: auto;
   width: auto;
+  max-width: 356px;
   min-width: 228px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px 2px #9E9E9E;
+  box-shadow: 0px 4px 8px 2px #663b54;
   overflow: hidden;
 }
 .weather-card .top {
   position: relative;
-  height: 80%;
+  height: 90%;
   width: 100%;
   overflow: hidden;
   background: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg") no-repeat;

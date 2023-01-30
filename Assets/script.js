@@ -136,11 +136,11 @@
 // }
 
 
-// function displayTime() {
-//     $("#current-date").text(dayjs().format("MMM D, YYYY"));
-//     $("#current-time").text(dayjs().format("h:mm:ss A"));
-// }
-// setInterval(displayTime, 1000);
+function displayTime() {
+    $("#current-date").text(dayjs().format("MMM D, YYYY"));
+    $("#current-time").text(dayjs().format("h:mm:ss A"));
+}
+setInterval(displayTime, 1000);
 
 // btnBuild();
 
@@ -176,11 +176,11 @@ const d = new Date();
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function getDay(date) {
-    if(date +d.getDay() > 6){
+    if((date + d.getDay()) > 6){
         return day +d.getDay()-7;
     }
     else{
-        return day +d.getDay();
+        return d.getDay() + date;
         
     }
 }

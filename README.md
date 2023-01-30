@@ -101,7 +101,7 @@ Cassie LeClair - cassieleclair71@gmail.com
 * [Bootstrap layout](https://getbootstrap.com/docs/5.0/layout/utilities/)
 * [jQuery API](https://api.jquery.com/)
 * [Document.getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
-* [Logical AND (&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
+* [An Interactive Guide to Keyframe Animations](https://www.joshwcomeau.com/animation/keyframe-animations/)
 * [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
 * [HTML/CSS video as background for the header](https://stackoverflow.com/questions/54208390/html-css-video-as-background-for-the-header)
 * [Animated Search Bar Using Only HTML and CSS](https://foolishdeveloper.com/animated-search-bar-using-only-html-and-css/)
