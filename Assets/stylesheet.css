@@ -295,16 +295,63 @@ body {
 
 .card {
     margin-right: 10px;
-    height: 190px;
-    opacity: 0.0;
+    
+    /* opacity: 0.0; */
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
 }
+.input-box{
+  position: relative;
+}
 
-form:hover + .card {
+.input-box i {
+  position: absolute;
+  right: 13px;
+  top:15px;
+  color:#ced4da;
+
+}
+
+.form-control{
+
+  height: 50px;
+  background-color:#eeeeee69;
+}
+
+.form-control:focus{
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border-color: #eee;
+}
+
+
+.list{
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+}
+
+.border-bottom{
+
+  border-bottom: 2px solid #eee;
+}
+
+.list i{
+  font-size: 19px;
+  color: red;
+}
+
+.list small{
+
+  color:#dedddd;
+}
+/* form:hover + .card {
     opacity: 0.6;
 }
 form{
@@ -361,17 +408,17 @@ form:hover{
 
 form:hover input{
     display: block;
-}
+} */
 .srchBar {
     position: absolute;
     top: 30px;
     right: 10px;
 }
 
-form:hover .fa{
+/* form:hover .fa{
     background: #4c3550;
     color: rgba(255, 255, 255, 0.548);
-}
+} */
 
 footer {
     background-color: #4c3550;

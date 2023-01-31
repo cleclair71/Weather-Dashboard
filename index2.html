@@ -5,9 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!-- background-->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../Weather-Dashboard/Assets/stylesheet.css" />
     <title>Weather Dashboard</title>
@@ -27,22 +29,27 @@
                         <div class="twoheading" id="current-date"> mmm/dd,yyyy</div>
 
                         <div class="srchBar">
-                            <form action="">
-                                <input id="search-input" type="search" placeholder="Enter a City Name">
-                                <i class="fa fa-search"></i>
-                            </form>
-                            <div class="card">
-                                <div class="card-body">
-                                    <!-- <input id="search-input" type="text" placeholder="Enter a City Name"
-                                    class="form-control" />
-                                <div class="d-grid gap-2 pt-1 mt-1">
-                                    <button id="searchbtn" class="d-grid gap-2 btn btn-dark" type="button">
-                                        Search
-                                    </button> -->
-                                    <div class="history">
-                                        <h5> Recent Searches: </h5>
-                                        <div id="recent"></div>
-                                    </div>
+                            
+
+                                <div class="input">
+                                    <input id="search-input" type="text" class="form-control"
+                                        placeholder="Enter a City Name">
+                                    <button class="fa fa-search btn"></button>
+                               
+                            </div>
+                        </div>
+                        <!-- <form id="input" action="">
+                                <input  type="text" >
+                                <input type="submit" value="Search" class="fa fa-search"></input>
+
+
+                            </form> -->
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="history">
+                                    <h5> Recent Searches: </h5>
+                                    <div class ="list" id="recent"></div>
                                 </div>
                             </div>
                         </div>
@@ -50,6 +57,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -69,215 +77,208 @@
                         <div id="container">
                             <div class="row">
                                 <div class="col-md">
-                                    <div class="currentweather weather-card" id="iconsContainer">
-                                        <div class="top">
-                                            <div class="wrapper">
-                                                <h3 id="display-city" class="location"> City </h3>
-                                                <div class="date-time">
-                                                    <div class="ml-4 mb-4" id="current-date"> mmm/dd,yyyy</div>
-                                                    <div class="time-font mb-0 ml-4 mt-auto" id="current-time"> 0:00:00
-                                                        pm</div>
-                                                </div>
-                                                <div class="conditions">
-                                                    <p class="icons" class="temp">
-                                                    <p class="weather" id="day1"></p>
-                                                    <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                    </div>
-                                                    <p id="day1temp" id="temperature">Temperature: </p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="bottom">
-                                            <div class="wrapper">
-                                                <ul class="forecast" id="day1">
-                                                    <li class="active">
-                                                        <p id="day1hum" id="humidity">Humidity: </p>
-                                                        <p id="day1speed" id="wind-speed">Wind-speed: </p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="currentweather>
+                                        <marquee id=" display-city" class="location">City</marquee>
+                                        <span id="current-time"> 0:00:00 pm</span>
+                                        <span id="temp">temperature</span>
+                                        <span id="humidity">Humidity: </span>
+                                        <span id="wind-speed">Wind-speed: </span>
+                                        <span id="main">Cloudy</span>
+                                        <marquee id="description">overcast</marquee>
+                                        <img id="image" src="https://openweathermap.org/img/wn/02n@2x.png">
                                     </div>
                                 </div>
-                                <div class="section-title mb-0">
-                                    <h2>5 Day Forecast</h2>
-                                </div>
-                                <!-- day one-->
-                                <div id="container">
-                                    <div class="row">
-                                        <div class="col-md">
-                                            <div class="weather-card one" id="iconsContainer">
-                                                <div class="top">
-                                                    <div class="wrapper">
-                                                        <h3 id="date"> date </h3>
-                                                        <p class="icons" class="temp">
-                                                        <p class="weather" id="day1"></p>
-                                                        <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                        </div>
-                                                        <p id="day1temp" id="temperature">Temperature: </p>
+                                <!-- <div class="wrapper">
+                                </div> -->
+                            </div>
+                        </div>
 
 
-                                                    </div>
-                                                </div>
+                    </div>
+                    <div class="section-title mb-0">
+                        <h2>5 Day Forecast</h2>
+                    </div>
 
-                                                <div class="bottom">
-                                                    <div class="wrapper">
-                                                        <ul class="forecast" id="day1">
+                    <section class="weather">
+                        <div id="container">
+                            <div class=”forecast”>
 
-                                                            <li class="active">
-                                                                <p id="day1hum" id="humidity">Humidity: </p>
-                                                                <p id="day1speed" id="wind-speed">Wind-speed: </p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- <div class="row">
+                            <div class="col-md">
+                                <div class="weather-card one" id="iconsContainer">
+                                    <div class="top">
+                                        <div class="wrapper">
+                                            <h3 id="date"> date </h3>
+                                            <p class="icons" class="temp">
+                                            <p class="weather" id="day1"></p>
+                                            <div class="image" img src="" class="imgClass" id="img1" alt="">
                                             </div>
+                                            <p id="day1temp" id="temperature">Temperature: </p>
+
+
                                         </div>
+                                    </div>
 
-                                        <div class="col-md">
-                                            <div class="weather-card one" id="iconsContainer">
-                                                <div class="top">
-                                                    <div class="wrapper">
+                                    <div class="bottom">
+                                        <div class="wrapper">
+                                            <ul class="forecast" id="day1">
 
-                                                        <h3 id="date"> date </h3>
-                                                        <p class="icons" class="temp">
-                                                        <p class="weather" id="day2"></p>
-                                                        <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                        </div>
-                                                        <p id="day2temp" id="temperature">Temperature: </p>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="bottom">
-                                                    <div class="wrapper">
-                                                        <ul class="forecast" id="day2">
-
-                                                            <li class="active">
-                                                                <p id="day2hum" id="humidity">Humidity: </p>
-                                                                <p id="day2speed" id="wind-speed">Wind-speed: </p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- day 3-->
-
-
-                                        <div class="col-md">
-                                            <div class="weather-card one" id="iconsContainer">
-                                                <div class="top">
-                                                    <div class="wrapper">
-
-                                                        <h3 id="date"> date </h3>
-                                                        <p class="icons" class="temp">
-                                                        <p class="weather" id="day3"></p>
-                                                        <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                        </div>
-                                                        <p id="day3temp" id="temperature">Temperature: </p>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="bottom">
-                                                    <div class="wrapper">
-                                                        <ul class="forecast" id="day3">
-
-                                                            <li class="active">
-                                                                <p id="day3hum" id="humidity">Humidity: </p>
-                                                                <p id="day3speed" id="wind-speed">Wind-speed: </p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- day 4-->
-
-
-                                        <div class="col-md">
-                                            <div class="weather-card one" id="iconsContainer">
-                                                <div class="top">
-                                                    <div class="wrapper">
-
-                                                        <h3 id="date"> date </h3>
-                                                        <p class="icons" class="temp">
-                                                        <p class="weather" id="day4"></p>
-                                                        <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                        </div>
-                                                        <p id="day4temp" id="temperature">Temperature: </p>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="bottom">
-                                                    <div class="wrapper">
-                                                        <ul class="forecast" id="day1">
-
-                                                            <li class="active">
-                                                                <p id="day4hum" id="humidity">Humidity: </p>
-                                                                <p id="day4speed" id="wind-speed">Wind-speed: </p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- day 5-->
-
-
-                                        <div class="col-md">
-                                            <div class="weather-card one" id="iconsContainer">
-                                                <div class="top">
-                                                    <div class="wrapper">
-
-                                                        <h3 id="date"> date </h3>
-                                                        <p class="icons" class="temp">
-                                                        <p class="weather" id="day5"></p>
-                                                        <div class="image" img src="" class="imgClass" id="img1" alt="">
-                                                        </div>
-                                                        <p id="day5temp" id="temperature">Temperature: </p>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="bottom">
-                                                    <div class="wrapper">
-                                                        <ul class="forecast" id="day1">
-
-                                                            <li class="active">
-                                                                <p id="day5hum" id="humidity">Humidity: </p>
-                                                                <p id="day5speed" id="wind-speed">Wind-speed: </p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <li class="active">
+                                                    <p id="day1hum" id="humidity">Humidity: </p>
+                                                    <p id="day1speed" id="wind-speed">Wind-speed: </p>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="col-md">
+                                <div class="weather-card one" id="iconsContainer">
+                                    <div class="top">
+                                        <div class="wrapper">
+
+                                            <h3 id="date"> date </h3>
+                                            <p class="icons" class="temp">
+                                            <p class="weather" id="day2"></p>
+                                            <div class="image" img src="" class="imgClass" id="img1" alt="">
+                                            </div>
+                                            <p id="day2temp" id="temperature">Temperature: </p>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="wrapper">
+                                            <ul class="forecast" id="day2">
+
+                                                <li class="active">
+                                                    <p id="day2hum" id="humidity">Humidity: </p>
+                                                    <p id="day2speed" id="wind-speed">Wind-speed: </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- day 3-->
+
+                    <!-- 
+                    <div class="col-md">
+                        <div class="weather-card one" id="iconsContainer">
+                            <div class="top">
+                                <div class="wrapper">
+
+                                    <h3 id="date"> date </h3>
+                                    <p class="icons" class="temp">
+                                    <p class="weather" id="day3"></p>
+                                    <div class="image" img src="" class="imgClass" id="img1" alt="">
+                                    </div>
+                                    <p id="day3temp" id="temperature">Temperature: </p>
+
+
+                                </div>
+                            </div>
+
+                            <div class="bottom">
+                                <div class="wrapper">
+                                    <ul class="forecast" id="day3">
+
+                                        <li class="active">
+                                            <p id="day3hum" id="humidity">Humidity: </p>
+                                            <p id="day3speed" id="wind-speed">Wind-speed: </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
-                </div>
+                    <!-- day 4-->
+
+
+                    <!-- <div class="col-md">
+                        <div class="weather-card one" id="iconsContainer">
+                            <div class="top">
+                                <div class="wrapper">
+
+                                    <h3 id="date"> date </h3>
+                                    <p class="icons" class="temp">
+                                    <p class="weather" id="day4"></p>
+                                    <div class="image" img src="" class="imgClass" id="img1" alt="">
+                                    </div>
+                                    <p id="day4temp" id="temperature">Temperature: </p>
+
+
+                                </div>
+                            </div>
+
+                            <div class="bottom">
+                                <div class="wrapper">
+                                    <ul class="forecast" id="day1">
+
+                                        <li class="active">
+                                            <p id="day4hum" id="humidity">Humidity: </p>
+                                            <p id="day4speed" id="wind-speed">Wind-speed: </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                    <!-- day 5-->
+
+
+                    <!-- <div class="col-md">
+                        <div class="weather-card one" id="iconsContainer">
+                            <div class="top">
+                                <div class="wrapper">
+
+                                    <h3 id="date"> date </h3>
+                                    <p class="icons" class="temp">
+                                    <p class="weather" id="day5"></p>
+                                    <div class="image" img src="" class="imgClass" id="img1" alt="">
+                                    </div>
+                                    <p id="day5temp" id="temperature">Temperature: </p>
+
+
+                                </div>
+                            </div>
+
+                            <div class="bottom">
+                                <div class="wrapper">
+                                    <ul class="forecast" id="day1">
+
+                                        <li class="active">
+                                            <p id="day5hum" id="humidity">Humidity: </p>
+                                            <p id="day5speed" id="wind-speed">Wind-speed: </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --> -->
+                </div> -->
             </div>
         </div>
+
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
     </div>
 
     <footer id="sticky-footer" class="flex-shrink-0 py-4 bg text-white-50">
@@ -286,11 +287,17 @@
         </div>
     </footer>
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.9.0/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <script src="../Weather-Dashboard/Assets/script.js"></script>
 
 </body>
