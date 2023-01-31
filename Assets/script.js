@@ -136,58 +136,134 @@
 // }
 
 
+// This function displays the current time
 function displayTime() {
+    // Set the text of the current-date element to the current date
     $("#current-date").text(dayjs().format("MMM D, YYYY"));
+    // Set the text of the current-time element to the current time
     $("#current-time").text(dayjs().format("h:mm:ss A"));
 }
+// Call the displayTime function once every second
 setInterval(displayTime, 1000);
 
-// btnBuild();
-
-
+// This function gets the info from the input
 function getInfo() {
+    // Get the value of the search-input element
     const newName = document.getElementById("search-input");
+    // Get the value of the display-city element
     const cityName = document.getElementById("display-city");
+    // Set the text of the display-city element to the value of the search-input element
     cityName.innerHTML ="--"+newName.value+"--";
 
-    
-
+    // Call the getWeather function and pass in the search-input value
+    getWeather(newName.value);
 }
-fetch("https://api.openweathermap.org/data/2.5/weather?q='+newName.value+'&appid=57deb76a90251740c9398ca04eb2710e")
-.then(response => response.json())
-.then(data => {
-for(i=0; i<5;i++){
-document.getElementById("date" +(i+1)+ "temperature").innerHTML = "Temperature:" +Number(data.list[i].main.temp -271.51).toFixed(1)+"°"
-}
-for(i=0; i<5;i++){
-    document.getElementById("date" +(i+1)+ "Humidity").innerHTML = "Humidity:" +Number(data.list[i].main.humidity -80).toFixed(1)+"%"
-    }
-    for(i=0; i<5;i++){
-        document.getElementById("date" +(i+1)+ "wind-speed").innerHTML = "Wind-speed:" +Number(data.list[i].wind.speed -9.77).toFixed(1)+"mph"
-        }
-for (i=0; i<5;i++){
-document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
 
+// This function gets the weather
+function getWeather(city) {
+    // Call the fetch function passing the url of the API as a parameter
+    fetch("https://api.openweathermap.org/data/2.5/weather?q='+newName.value+'&appid=57deb76a90251740c9398ca04eb2710e")
+    // Convert the response to JSON
+    .then(response => response.json())
+    // Call the displayWeather function passing the API data as a parameter
+    .then(data => displayWeather(data))
+    // Catch any errors and log them to the console
+    .catch(err => console.log(err))
 }
-})
-.catch(err => alert("Oops, something went wrong!"))
 
+// This function displays the weather
+function displayWeather(data) {
+    // Get the current temperature
+    const temp = data.main.temp;
+    // Get the current humidity
+    const humidity = data.main.humidity;
+    // Get the current wind speed
+    const windSpeed = data.wind.speed;
+    // Get the current weather icon
+    const icon = data.weather[0].icon;
+
+    // Set the text of the current-temp element to the temperature
+    document.getElementById("current-temp").innerHTML = "Temperature: " + temp + "°F";
+    // Set the text of the current-humidity element to the humidity
+    document.getElementById("current-humidity").innerHTML = "Humidity: " + humidity + "%";
+    // Set the text of the current-wind-speed element to the wind speed
+    document.getElementById("current-wind-speed").innerHTML = "Wind Speed: " + windSpeed + "mph";
+    // Set the src of the current-weather-icon element to the weather icon
+    document.getElementById("current-weather-icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
+}
+// Create a new date object
 const d = new Date();
+
+// Create an array of days of the week
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+// Create a function to get the day of the week
 function getDay(date) {
+    // Check if the day is beyond the end of the week
     if((date + d.getDay()) > 6){
-        return day +d.getDay()-7;
+        // Return the day minus 7
+        return date + d.getDay() - 7;
     }
+    // If the day is not beyond the end of the week
     else{
+        // Return the day plus the current day
         return d.getDay() + date;
         
     }
 }
+
+// Create a for loop to cycle through the days
 for(i=0; i<5;i++){
+    // Set the HTML of the element with id date to the day of the week
     document.getElementById("date" +(i+1)).innerHTML = weekday[getDay(i)];
 }
 
+// var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+
+// function getInfo() {
+//     const newName = document.getElementById("search-input");
+//     const cityName = document.getElementById("display-city");
+//     cityName.innerHTML ="--"+newName.value+"--";
+
+    
+
+// }
+// fetch("https://api.openweathermap.org/data/2.5/weather?q='+newName.value+'&appid=57deb76a90251740c9398ca04eb2710e")
+// .then(response => response.json())
+// .then(data => {
+// for(i=0; i<5;i++){
+// document.getElementById("date" +(i+1)+ "temperature").innerHTML = "Temperature:" +Number(data.list[i].main.temp -271.51).toFixed(1)+"°"
+// }
+// for(i=0; i<5;i++){
+//     document.getElementById("date" +(i+1)+ "Humidity").innerHTML = "Humidity:" +Number(data.list[i].main.humidity -80).toFixed(1)+"%"
+//     }
+//     for(i=0; i<5;i++){
+//         document.getElementById("date" +(i+1)+ "wind-speed").innerHTML = "Wind-speed:" +Number(data.list[i].wind.speed -9.77).toFixed(1)+"mph"
+//         }
+// for (i=0; i<5;i++){
+// document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
+
+// }
+// })
+// .catch(err => alert("Oops, something went wrong!"))
+
+// const d = new Date();
+// const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// function getDay(date) {
+//     if((date + d.getDay()) > 6){
+//         return day +d.getDay()-7;
+//     }
+//     else{
+//         return d.getDay() + date;
+        
+//     }
+// }
+// for(i=0; i<5;i++){
+//     document.getElementById("date" +(i+1)).innerHTML = weekday[getDay(i)];
+// }
+
+// // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey
 
 
 
