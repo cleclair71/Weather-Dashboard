@@ -5,57 +5,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../Weather-Dashboard/Assets/stylesheet.css" />
     <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h4>Weather <br>
-                Dashboard</h4>
-        </header>
-        <div class="col col-md">
+    <!-- page-header -->
+    <div class="page-header">
+        <div class="container">
             <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <input id="search-input" type="text" placeholder="Enter a City Name" class="form-control" />
-                        <div class="d-grid gap-2 pt-1 mt-1">
-                            <button id="searchbtn" class="d-grid gap-2 btn btn-dark" type="button">
-                                Search
-                            </button>
-                            <div class="history">
-                                <h5> Recent Searches: </h5>
-                                <div id="recent"></div>
+                <video autoplay muted loop src="Assets\Images\Lake\Lake-sunset\Lake-sunset.mp4"></video>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                    <div class="page-caption">
+                        <h1 class="page-title">Weather <br> Dashboard</h1>
+                        <div class="twoheading" id="current-date"> mmm/dd,yyyy</div>
+
+                        <div class="srchBar">
+
+
+                            <div class="input">
+                                <input id="search-input" type="text" class="form-control"
+                                    placeholder="Enter a City Name">
+                                <button class="fa fa-search btn"></button>
+
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="card">
+                            <div class="card-body" >
 
-                <div  class="container-fluid px-1 px-md-4 py-5 mx-auto">
-                    <div class="row d-flex justify-content-center px-3">
-                        <div class="card" id="current">
-                            <header class="card-tile text-center">
-                                <div id="display-city" class="ml-auto mr-4 mt-3 mb-0 text">City Name</div>
-                            </header>
-                            <div id="currentweather" class="card-body">
-                                <div class="date-time">
-                                    <div class="ml-4 mb-4" id="current-date"> mmm/dd,yyyy</div>
-                                    <div class="time-font mb-0 ml-4 mt-auto" id="current-time"> 0:00:00 pm</div>
-                                </div>
-                                <div class="condtions">
-                                    <span id="iconweather"></span>
-                                    <div class="ml-auto mr-4 large-font">Temperature: <span
-                                            id="temperature"></span>&#176F</span></div>
-                                    <div class="ml-auto mr-4 mb-0 med-font"> Humidity: <span id="humidity"> </span>%
-                                    </div>
-                                    <div class="ml-auto mr-4 mb-0 med-font">Wind-speed: <span id="wind-speed">
-                                        </span>MPH</div>
+                                <div class="history">
+                                    <h5> Recent Searches: </h5>
+                                    <ol class="list" id="recent"></ol>
                                 </div>
                             </div>
                         </div>
@@ -65,32 +51,221 @@
         </div>
     </div>
 
+    </div>
 
-    <h2 class="forecast-header card-header">5 Day Forecast</h2>
-    <!-- day one-->
-    <section class=”weather”>
-        <div class=”container”>
-          <div class=”forecast”>
-            
-          </div>
+    <!-- /.page-header-->
+    <!-- news -->
+    <div class="card-section">
+        <div class="container">
+            <div class="card-block bg mb30">
+                <div class="row justify-content-center">
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <!-- section-title -->
+                        <div class="section-title mb-0">
+                            <h2>Current Weather</h2>
+                        </div>
+                        <!-- current weather-->
+                        <div id="container">
+                            <div class="row align-items-center vh-100">
+                                <div class="col-lg-8 stretch-card mx-auto">
+                                    <div class="currentweather card-body d-flex flex-column align-items-center">
+                                        <span id=" display-city" class="location">City</span> <br>
+                                        <span id="current-time"> 0:00:00 pm</span><br>
+                                        <span id="temp">temperature</span><br>
+                                        <span id="humidity">Humidity: </span><br>
+                                        <span id="wind-speed">Wind-speed: </span><br>
+                                        <span id="main">Cloudy</span>
+                                        <span id="description">overcast</span><br>
+                                        <img id="image" src="https://openweathermap.org/img/wn/02n@2x.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="section-title mb-0">
+                        <h2 class= "justify-content-center">5 Day Forecast</h2>
+                    </div>
+                    <!-- Day 1 -->
+                    <section>
+                        <div id="container">
+                            <div class="forecast">
+
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div id="day1" class="weather-card one">
+                                            <div class="top">
+                                                <div class="wrapper">
+
+                                                    <div id="date1"> MMMM D, YYYY</div>
+                                                    <p class="icons">
+
+                                                    <div class="image">
+                                                        <img src="" class="imgClass" id="img1" alt="">
+                                                    </div>
+                                                    <span id="day1temp">Temperature: </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="wrapper">
+                                                    <ul>
+                                                        <li class="active">
+                                                            <span id="day1hum">Humidity: </span>
+                                                            <span id="day1speed">Wind-speed: </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Day 2 -->
+                                    <div class="col-md">
+                                        <div id="day2" class="weather-card one">
+                                            <div class="top">
+                                                <div class="wrapper">
+                                                    <div id="date2"> MMMM D, YYYY</div>
+                                                    <p class="icons">
+
+                                                    <div class="image">
+                                                        <img src="" class="imgClass" id="img2" alt="">
+                                                    </div>
+                                                    <span id="day2temp">Temperature: </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="wrapper">
+                                                    <ul>
+                                                        <li class="active">
+                                                            <span id="day2hum">Humidity: </span>
+                                                            <span id="day2speed">Wind-speed: </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- day 3-->
+
+
+                                    <div class="col-md">
+                                        <div id="day3" class="weather-card one">
+                                            <div class="top">
+                                                <div class="wrapper">
+                                                    <div id="date3"> MMMM D, YYYY</div>
+                                                    <p class="icons">
+
+                                                    <div class="image">
+                                                        <img src="" class="imgClass" id="img3" alt="">
+                                                    </div>
+                                                    <span id="day3temp">Temperature: </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="wrapper">
+                                                    <ul>
+                                                        <li class="active">
+                                                            <span id="day3hum">Humidity: </span>
+                                                            <span id="day3speed">Wind Speed: </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- day 4-->
+
+
+                                    <div class="col-md">
+                                        <div id="day4" class="weather-card one">
+                                            <div class="top">
+                                                <div class="wrapper">
+                                                    <div id="date4"> MMMM D, YYYY</div>
+                                                    <p class="icons">
+
+                                                    <div class="image">
+                                                        <img src="" class="imgClass" id="img4" alt="">
+                                                    </div>
+                                                    <span id="day4temp">Temperature: </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="wrapper">
+                                                    <ul class="forecast">
+                                                        <li class="active">
+                                                            <span id="day4hum">Humidity: </span>
+                                                            <span id="day4speed">Wind-speed: </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- day 5-->
+
+
+                                    <div class="col-md">
+                                        <div id="day5" class="weather-card one">
+                                            <div class="top">
+                                                <div class="wrapper">
+                                                    <div id="date5"> MMMM D, YYYY</div>
+                                                    <p class="icons">
+
+                                                    <div class="image">
+                                                        <img src="" class="imgClass" id="img5" alt="">
+                                                    </div>
+                                                    <span id="day5temp">Temperature: </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="wrapper">
+                                                    <ul>
+                                                        <li class="active">
+                                                            <span id="day5hum">Humidity: </span>
+                                                            <span id="day5speed">Wind Speed: </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </section>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </div>
 
 
-
-
-
-    <footer>
-
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg text-white-50">
+        <div class="container text-center">
+            <small>made by CASSIE LECLAIR </small>
+        </div>
     </footer>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.9.0/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <script src="../Weather-Dashboard/Assets/script.js"></script>
 
 </body>

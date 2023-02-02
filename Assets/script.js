@@ -8,11 +8,11 @@ const currentDate = document.querySelector("#current-date");
 currentDate.textContent = dayjs().format("MMM/DD, YYYY");
 
 // Forecast
-const date1 = document.querySelector("#day1 .date");
-const date2 = document.querySelector("#day2 .date");
-const date3 = document.querySelector("#day3 .date");
-const date4 = document.querySelector("#day4 .date");
-const date5 = document.querySelector("#day5 .date");
+const date1 = document.querySelector("#date1");
+const date2 = document.querySelector("#date2");
+const date3 = document.querySelector("#date3");
+const date4 = document.querySelector("#date4");
+const date5 = document.querySelector("#date5");
 const icon1 = document.querySelector("#img1");
 const icon2 = document.querySelector("#img2");
 const icon3 = document.querySelector("#img3");
@@ -122,20 +122,19 @@ async function getWeatherData(city, APIKey) {
      const response = await fetch(forecastURL);
      const data = await response.json();
  
-    //  const dayjs = require('dayjs');
 
 let forecastData = data.list.filter((item, index) => {
          return index % 8 === 0;
      });
      
 for (let i = 1; i <= 5; i++) {
-    let currentDate = dayjs.unix(forecastData[i - 1].dt).format('MMMM D, YYYY');
+    let forecastDate = dayjs.unix(forecastData[i - 1].dt).format('MMMM D, YYYY');
     const dateEl = document.querySelector(`#date${i}`);
     if (!dateEl) {
         console.error(`Element with id date not found.`);
         continue;
     }
-    dateEl.textContent = currentDate;
+    dateEl.textContent = forecastDate;
   
     const iconUrl = `http://openweathermap.org/img/wn/${forecastData[i - 1].weather[0].icon}@2x.png`;
     document.querySelector(`#img${i}`).setAttribute("src", iconUrl);

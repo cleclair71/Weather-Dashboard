@@ -15,10 +15,7 @@
 
  
   
-/* add media queries for weather cards*/
-/* add current weather card*/
-/* add media queries for weather cards*/
-/* add media queries for weather cards*/
+
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #271334; }
 h1, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
 h1 { font-size: 56px; }
@@ -29,6 +26,8 @@ h2 {
     font-weight: 600; 
     letter-spacing:-2px; 
     text-transform:uppercase;
+    margin-bottom: 20px;
+    text-align: center;
      }
 
 h3 { font-size: 22px; line-height: 32px; }
@@ -94,7 +93,6 @@ video {
 } 
 
 body {
-    /* color: #fff; */
     overflow-x: hidden;
     height: 100%;
     background-repeat: no-repeat;
@@ -142,14 +140,38 @@ body {
     vertical-align: top;
   color: #fff;
 }
-/* .col-4 {
-    flex-basis: auto;
-}  */
+.span {
+  color: #fff;
+}
+.col-lg-8 .stretch-card .mx-auto {
+max-height: 600px;
+}
+
+.row .align-items-center {
+    max-height: 600px;
+}
+.currentweather {
+  margin-top: 70px;
+ 
+  text-align: center;
+  margin: auto !important;
+  position: relative;
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  background: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg") repeat center center fixed;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #663b54;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
 .weather-card {
-  margin: 60px auto;
+  margin: auto;
   height: auto;
   width: auto;
-  max-width: 356px;
+  margin-bottom: 20px;
+  max-width: 240px;
   min-width: 228px;
   background: #fff;
   border-radius: 10px;
