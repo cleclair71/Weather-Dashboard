@@ -131,7 +131,41 @@ body {
   font-weight: 400;
   color: #fff;
 }
+button {
+  position: absolute;
+  right: 9px;
+  top:11px;
+  background-color: #ffffff;
+}
 
+.fa-search {
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.history {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: white;
+    opacity: 0.6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #9E9E9E;
+    max-width: 224px;
+    float:right;
+    position: absolute;
+  right: 13px;
+  top:90px;
+  color:#ced4da;
+}
+
+.card-body .srch {
+  opacity: 0.5;
+}
 .large-font {
     display: inline-block;
     font-size: 10px;
