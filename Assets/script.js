@@ -8,26 +8,36 @@ const btn = document.querySelector(".btn");
 const currentDate = document.querySelector("#current-date");
 currentDate.textContent = dayjs().format("MMM/DD, YYYY");
 
+// Add event listener to button
 btn.addEventListener("click", async (event) => {
+  // Prevent default action of button
   event.preventDefault();
+  // Get value of search input
   const city = searchInput.value;
+  // Get current weather data from API
   const weatherData = await getWeatherData(city, APIKey);
+  // Get forecast data from API
   const forecastData = await getForecastData(city, APIKey);
+  // Display current weather data
   displayCurrentWeatherData(weatherData);
 });
 
 async function getWeatherData(city, APIKey) {
+  // 1. Fetch the data from the API
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
   );
+  // 2. Return the data from the API as JSON
   return await response.json();
 }
 
-function displayCurrentWeatherData(currentWeatherData) {
-  const displayCity = document.querySelector("#display-city");
-  if (displayCity) {
-    displayCity.textContent = data.name;
-  }
+// Get the display-city element and store it in a variable
+const displayCity = document.querySelector("#display-city");
+// Check that the display-city element exists
+if (displayCity) {
+  // Update the text of the display-city element to the city name
+  displayCity.textContent = data.name;
+}
   const currentTime = document.querySelector("#current-time");
   currentTime.textContent = dayjs().format("h:mm:ss a");
   const temp = document.querySelector("#temp");
@@ -42,7 +52,7 @@ function displayCurrentWeatherData(currentWeatherData) {
     description.textContent = data.weather[0].description;
     const image = document.querySelector("#image");
     image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-  }
+
 
 // Display recent searches
 let recentSearches = [];
@@ -67,36 +77,56 @@ recentList.innerHTML = "";
 
 
 // Render recent searches
-for (let i = 0; i < recentSearches.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = recentSearches[i];
-    recentList.appendChild(li);
-    }
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
-    displayCurrentWeatherData();
-    
-    var forecast = document.querySelector(".forecast");
-    
+// Creates a new list item
+let li = document.createElement("li");
+// Sets the text content of the new list item to the value in the array at the current index
+li.textContent = recentSearches[i];
+// Appends the new list item to the recent list
+recentList.appendChild(li);
+// Saves the recent searches array to local storage as a string
+localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+// Displays the current weather data
+displayCurrentWeatherData();
+// Creates a variable for the forecast section
+var forecast = document.querySelector(".forecast");
+    // Fetch the geo coordinates for a city from the OpenWeather API
     async function cityGeo(city, APIKey) {
-    const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKey}`;
-    const response = await fetch(geoURL);
-    const geoData = await response.json();
-    const lat = geoData[0].lat;
-    const lon = geoData[0].lon;
-    return { lat, lon };
+    
+        // Construct the geo coordinates URL
+        const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKey}`;
+        
+        // Fetch the geo coordinates URL
+        const response = await fetch(geoURL);
+        
+        // Convert the response to a JSON object
+        const geoData = await response.json();
+        
+        // Extract the latitude and longitude from the JSON object
+        const lat = geoData[0].lat;
+        const lon = geoData[0].lon;
+        
+        // Return the latitude and longitude
+        return { lat, lon };
     }
     
+    // Fetches the forecast data from the OpenWeatherMap API
     async function getForecastData(city, APIKey) {
-    const coords = await cityGeo(city, APIKey);
-    const lat = coords.lat;
-    const lon = coords.lon;
     
-    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`;
-    const response = await fetch(forecastURL);
-    const data = await response.json();
-    const forecastData = data.list.filter(
-    (reading) => reading.dt_txt.includes("12:00:00")
-    );
+      // Calls the cityGeo function to get the latitude and longitude of the city
+      const coords = await cityGeo(city, APIKey);
+      const lat = coords.lat;
+      const lon = coords.lon;
+    
+      // Fetches the forecast data from the OpenWeatherMap API
+      const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+      const response = await fetch(forecastURL);
+      const data = await response.json();
+    
+      // Filters the forecast data to include only the 12:00:00 readings
+      const forecastData = data.list.filter(
+        (reading) => reading.dt_txt.includes("12:00:00")
+      );
+    }
     
     forecastData.forEach((reading, index) => {
     const date = new Date(reading.dt_txt);
@@ -106,7 +136,7 @@ for (let i = 0; i < recentSearches.length; i++) {
     document.getElementById(`dayhum${index + 1}`).innerHTML = `Humidity: ${reading.main.humidity}%`;
     document.getElementById(`dayspeed${index + 1}`).innerHTML = `Wind-speed: ${reading.wind.speed}mph`;
     });
-    }
+    
     
     getForecastData(city, APIKey);
     
