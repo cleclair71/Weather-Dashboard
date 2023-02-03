@@ -2,139 +2,218 @@
 @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
 
 @keyframes slide-in {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
-  .page-title {
-    animation: slide-in 1000ms;
+  from {
+    transform: translateX(-100%);
   }
 
- 
-  
+  to {
+    transform: translateX(0%);
+  }
+}
 
-body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #271334; }
-h1, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
-h1 { font-size: 56px; }
-h2 { 
-    font-size: 26px; 
-    line-height: 1; 
-    color: #663b54;
-    font-weight: 600; 
-    letter-spacing:-2px; 
-    text-transform:uppercase;
-    margin-bottom: 20px;
-    text-align: center;
-     }
+.page-title {
+  animation: slide-in 1000ms;
+}
 
-h3 { font-size: 22px; line-height: 32px; }
-h4 { font-size: 20px; }
-h5 { font-size: 17px; }
-h6 { font-size: 12px; }
-p { margin: 0 0 20px; line-height: 1; }
-p:last-child { margin: 0px; }
-/* ul, ol { } */ 
-a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
-a:focus, a:hover { text-decoration: none;}
+
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: 'Overpass', sans-serif;
+  letter-spacing: 0px;
+  font-size: 17px;
+  color: #8d8f90;
+  font-weight: 400;
+  line-height: 32px;
+  background-color: #271334;
+}
+
+h1, h3, h4, h5, h6 {
+  color: #25292a;
+  margin: 0px 0px 10px 0px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 1;
+  color: #663b54;
+  font-weight: 600;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day4hum {
+  color: #25292a;
+  margin: 0px 0px 10px 0px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-size: 17px;
+
+}
+
+.day4speed {
+  color: #25292a;
+  margin: 0px 0px 10px 0px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-size: 17px;
+
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1;
+}
+
+p:last-child {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #8d8f90;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+}
 
 .twoheading {
-        animation: slide-in 1000ms;
-        font-size: 26px; 
-    line-height: 1; 
-    color: #ffffff;
-    font-weight: 600; 
-    letter-spacing:-2px; 
-    text-transform:uppercase;
+  animation: slide-in 1000ms;
+  font-size: 26px;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -2px;
+  text-transform: uppercase;
 }
 
 
 video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    object-position: center;
-    object-fit: cover;
-  }
-
-  header {
-    position: fixed;
-    font-family: Arial;
-    color: rgba(255, 255, 255, 0.253);
-    width: 98%;
-    margin: 10px;
-    border: 1px solid white;
-    background-color: black;
-    text-align: center;
-    overflow: hidden;
-  }
-
-.page-caption { padding-top: 170px; padding-bottom: 174px; }
-.page-title { font-size: 56px; line-height: 1; color: #fff; font-weight: 600; text-align: left; }
-
-.card-section { position: relative; bottom: 60px; }
-.card-block { 
-    padding: 80px; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px 2px #202020;
-    background-color: rgba(255, 255, 255, 0.568);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-position: center;
+  object-fit: cover;
 }
-.section-title { margin-bottom: 60px; font-size: 26px; line-height: 1; text-align: center; color: #4c3550, font-weight: 600; }
 
- .container {
-    margin:auto;
-} 
+header {
+  position: fixed;
+  font-family: Arial;
+  color: rgba(255, 255, 255, 0.253);
+  width: 98%;
+  margin: 10px;
+  border: 1px solid white;
+  background-color: black;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-caption {
+  padding-top: 170px;
+  padding-bottom: 174px;
+}
+
+.page-title {
+  font-size: 56px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+}
+
+.card-section {
+  position: relative;
+  bottom: 60px;
+}
+
+.card-block {
+  padding: 80px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #202020;
+  background-color: rgba(255, 255, 255, 0.568);
+}
+
+.section-title {
+  margin-bottom: 60px;
+  font-size: 26px;
+  line-height: 1;
+  text-align: center;
+  color: #4c3550, font-weight: 600;
+}
+
+.container {
+  margin: auto;
+}
 
 body {
-    overflow-x: hidden;
-    height: 100%;
-    background-repeat: no-repeat;
-    font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
   background: #271334;
 }
 
-#current{
-    width: 600px;
-    height: 350px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px 2px #9E9E9E;
-    margin-top: 50px;
-    margin-bottom: 50px;
+#current {
+  width: 600px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #9E9E9E;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .time-font {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    margin-left: 3px;
-    vertical-align: top;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 3px;
+  vertical-align: top;
 }
 
 .sm-font {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    margin-left: 3px;
-    vertical-align: top;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 3px;
+  vertical-align: top;
 }
 
 .med-font {
-    margin-top: 20px;
+  margin-top: 20px;
   font-size: 21px;
   font-weight: 400;
   color: #fff;
 }
+
 button {
   position: absolute;
   right: 9px;
-  top:11px;
+  top: 11px;
   background-color: #ffffff;
 }
 
@@ -145,48 +224,50 @@ button {
 button:hover {
   cursor: pointer;
 }
+
 .history {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    font-weight: 400;
-    background-color: white;
-    opacity: 0.6;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px 2px #9E9E9E;
-    max-width: 224px;
-    float:right;
-    position: absolute;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: white;
+  opacity: 0.6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #9E9E9E;
+  max-width: 224px;
+  float: right;
+  position: absolute;
   right: 13px;
-  top:90px;
-  color:#ced4da;
+  top: 90px;
+  color: #ced4da;
 }
 
 .card-body .srch {
   opacity: 0.5;
 }
+
 .large-font {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    margin-left: 3px;
-    vertical-align: top;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 3px;
+  vertical-align: top;
   color: #fff;
 }
-.span {
-  color: #fff;
-}
+
 .col-lg-8 .stretch-card .mx-auto {
-max-height: 600px;
+  max-height: 600px;
+  min-width: 228px;
 }
 
 .row .align-items-center {
-    max-height: 600px;
+  max-height: 600px;
 }
+
 .currentweather {
+  min-width: 228px;
   margin-top: 70px;
- 
   text-align: center;
   margin: auto !important;
   position: relative;
@@ -212,6 +293,7 @@ max-height: 600px;
   box-shadow: 0px 4px 8px 2px #663b54;
   overflow: hidden;
 }
+
 .weather-card .top {
   position: relative;
   height: 90%;
@@ -222,14 +304,17 @@ max-height: 600px;
   background-position: center center;
   text-align: center;
 }
+
 .weather-card .top .wrapper {
   padding: 30px;
   position: relative;
   z-index: 1;
 }
+
 .weather-card .top .wrapper .mynav {
   height: 20px;
 }
+
 /* .weather-card .top .wrapper .mynav .lnr {
   color: #fff;
   font-size: 20px;
@@ -241,29 +326,35 @@ max-height: 600px;
   font-weight: 400;
   color: #fff;
 }
+
 .weather-card .top .wrapper .location {
   margin-top: 20px;
   font-size: 21px;
   font-weight: 400;
   color: #fff;
 }
+
 .weather-card .top .wrapper .temp {
   margin-top: 20px;
 }
+
 .weather-card .top .wrapper .temp a {
   text-decoration: none;
   color: #fff;
 }
+
 .weather-card .top .wrapper .temp a {
   font-size: 85px;
 }
+
 .weather-card .top .wrapper .temp {
   display: inline-block;
   font-size: 85px;
   font-weight: 600;
   color: #fff;
 }
-.weather-card .top .wrapper .temp  {
+
+.weather-card .top .wrapper .temp {
   display: inline-block;
   font-size: 35px;
   font-weight: 600;
@@ -271,6 +362,7 @@ max-height: 600px;
   vertical-align: top;
   margin-top: 10px;
 }
+
 .weather-card .top:after {
   content: "";
   height: 100%;
@@ -281,10 +373,12 @@ max-height: 600px;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
 }
+
 .weather-card .bottom {
   padding: 0 30px;
   background: #fff;
 }
+
 .weather-card .bottom .wrapper .forecast {
   overflow: hidden;
   margin: 0;
@@ -293,33 +387,39 @@ max-height: 600px;
   padding-top: 20px;
   max-height: 155px;
 }
+
 .weather-card .bottom .wrapper .forecast a {
   text-decoration: none;
   color: #000;
 }
+
 .weather-card .bottom .wrapper .forecast .go-up {
   text-align: center;
   display: block;
-  font-size: 25px;
+  font-size: 17px;
   margin-bottom: 10px;
 }
+
 .weather-card .bottom .wrapper .forecast li {
   display: block;
-  font-size: 25px;
+  font-size: 17px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.25);
   line-height: 1em;
   margin-bottom: 30px;
 }
+
 .weather-card .bottom .wrapper .forecast li .date {
   display: inline-block;
 }
+
 .weather-card .bottom .wrapper .forecast li .condition {
   display: inline-block;
   vertical-align: middle;
   /* float: right; */
   font-size: 25px;
 }
+
 .weather-card .bottom .wrapper .forecast li .condition .temp {
   display: inline-block;
   vertical-align: top;
@@ -328,6 +428,7 @@ max-height: 600px;
   font-weight: 400;
   padding-top: 2px;
 }
+
 .weather-card .bottom .wrapper .forecast li .condition .temp .deg {
   display: inline-block;
   font-size: 10px;
@@ -335,56 +436,67 @@ max-height: 600px;
   margin-left: 3px;
   vertical-align: top;
 }
+
 .weather-card .bottom .wrapper .forecast li .condition .temp .temp-type {
   font-size: 20px;
 }
+
 .weather-card .bottom .wrapper .forecast li.active {
   color: rgba(0, 0, 0, 0.8);
 }
+
 .weather-card.rain .top {
   background: url("http://img.freepik.com/free-vector/girl-with-umbrella_1325-5.jpg?size=338&ext=jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }
+
 /* search city */
 
 
 .card {
-    margin-right: 10px;
-    
-    /* opacity: 0.0; */
-    -webkit-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-    -ms-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
+  margin-right: 10px;
+
+  /* opacity: 0.0; */
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
-.input-box{
+
+.input-box {
   position: relative;
+  position: absolute;
+  right: 13px;
+  top: 15px;
 }
 
 .input-box i {
   position: absolute;
   right: 13px;
-  top:15px;
-  color:#ced4da;
+  top: 15px;
+  color: #ced4da;
 
 }
 
-.form-control{
-
+.form-control {
+  position: absolute;
+  right: 13px;
+  top: 15px;
   height: 50px;
-  background-color:#eeeeee69;
+  background-color: #eeeeee69;
+  max-width: 228px;
 }
 
-.form-control:focus{
+.form-control:focus {
   background-color: #eeeeee69;
   box-shadow: none;
   border-color: #eee;
 }
 
 
-.list{
+.list {
 
   padding-top: 20px;
   padding-bottom: 10px;
@@ -393,90 +505,38 @@ max-height: 600px;
 
 }
 
-.border-bottom{
+.border-bottom {
 
   border-bottom: 2px solid #eee;
 }
 
-.list i{
+.list i {
   font-size: 19px;
-  color: red;
 }
 
-.list small{
+.list small {
 
-  color:#dedddd;
+  color: #dedddd;
 }
-/* form:hover + .card {
-    opacity: 0.6;
-}
-form{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.74);
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid #4c3550;
-    padding: 5px;
-}
-
-input{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;;
-    height: 42.5px;
-    line-height: 30px;
-    outline: 0;
-    border: 1px;
-    border-color: #4c3550;
-    display: none;
-    font-size: 1em;
-    border-radius: 20px;
-    padding: 0 20px;
-}
-
-.fa{
-    box-sizing: border-box;
-    padding: 10px;
-    width: 42.5px;
-    height: 42.5px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    color: #4c3550;
-    text-align: center;
-    font-size: 1.2em;
-    transition: all 1s;
-    display: block !important;
-}
-
-form:hover{
-    width: 300px;
-    cursor: pointer;
-}
-
-form:hover input{
-    display: block;
-} */
-.srchBar {
-    position: absolute;
-    top: 30px;
-    right: 10px;
-}
-
-/* form:hover .fa{
-    background: #4c3550;
-    color: rgba(255, 255, 255, 0.548);
-} */
 
 footer {
-    background-color: #4c3550;
+  background-color: #4c3550;
 }
 
+@media only screen and (max-width: 600px) {
+  .currentweather {
+    min-width: 228px;
+    margin-top: 70px;
+    margin-left: 2px;
+    text-align: center; 
+    position: relative;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    background: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg") repeat center center fixed;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #663b54;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+}
