@@ -67,9 +67,23 @@ video {
     top: 0;
     z-index: 1;
     margin: 5%;
-    align-items: center;
+    
 }
-
+#city-results {
+    position: relative;
+    top: 0;
+    
+    margin: 5%;
+    background-color: #ffffffb7 !important;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #663b54;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    display: block;
+    width: 95%;
+    
+}
 .page-header {
     position: fixed;
     font-family: Arial;
@@ -106,22 +120,28 @@ video {
 
 }
 #current-weather { 
-    display: block;
-   margin: 0 auto;
-    width: 10% !important;
-    text-align: center;
-    overflow: hidden;
-    background-color: #ffffffb7;
-  repeat center center fixed; 
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px 2px #663b54;
-  overflow: hidden;
-  position: relative;
-  border: none;
+   
   color: #000000;
   padding: 6px;
 }
 
+#current-container {
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 2px #663b54;
+    display: block;
+    padding: 1rem;
+    background-color: #ffffffb7;
+}
+h2 {
+    color: #ffffff8d;
+    padding-bottom: 7px;
+    margin: auto;
+}
 #clear-storage{
     color:grey;
     text-decoration: none;
