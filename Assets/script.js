@@ -167,7 +167,25 @@ var renderCities = () => {
                 cityEl = `<button type="button" class="list-group-item list-group-item-action">${city}</button></li>`;
             } 
             // Append city to page
-            $('#city-results').prepend(cityEl);
+let $cityEl = $(cityEl);
+$cityEl.css({
+  "background-color": "#ffffff68", 
+  "color": "#2713347b",
+  "border-color": "#2713347b",
+  "font-family": "Montserrat, sans-serif",
+  "text-transform": "uppercase",
+  "font-weight": "bold",
+});
+$cityEl.hover(
+  function() { // function to run when mouse enters
+    $(this).css("background-color", "#ffffff");
+  }, 
+  function() { // function to run when mouse leaves
+    $(this).css("background-color", "#ffffff68");
+  }
+);
+
+$('#city-results').prepend($cityEl);
         }
         // Add a "clear" button to page if there is a cities list
         if (localStorage.length>0){
