@@ -140,7 +140,7 @@
 
 //     getForecastData(city, APIKey);
 
-var KeyAPI = "57deb76a90251740c9398ca04eb2710e";
+var owmAPI = "57deb76a90251740c9398ca04eb2710e";
 var currentCity = "";
 var lastCity = "";
 
@@ -150,31 +150,35 @@ var handleErrors = (response) => {
   }
   return response;
 }
-
-getCurrentWeather = (event) => {
-
-  let city = $("#search-input").val();
-  currentCity = $("#search-input").val();
-
-  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + KeyAPI;
+var getCurrentConditions = (event) => {
+  // Obtain city name from the search box
+  let city = $('#search-city').val();
+  currentCity= $('#search-city').val();
+  // Set the queryURL to fetch from API using weather search - added units=imperial to fix
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&APPID=" + owmAPI;
   fetch(queryURL)
-    .then(handleErrors)
-    .then((response => response.json())
+  .then(handleErrors)
+  .then((response) => {
+      return response.json();
+  })
 
-})
-.then((response) => {
-  saveCity(city);
-  $(#search-error.text("");
-  let currentWeatherIcon ="https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-
-  let currentTimeUTC = response.dt;
-  let currentTimeZoneOffset = response.timezone;
-  let currentTimeZoneOffsetHours = currentTimeZoneOffset / 60 / 60;
-  let currentMoment = moment.unix(currentTimeUTC).utc().utcOffset(currentTimeZoneOffsetHours);
+  .then((response) => {
+        // Save city to local storage
+        saveCity(city);
+        $('#search-error').text("");
+        // Create icon for the current weather using Open Weather Maps
+        let currentWeatherIcon="https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+        // Offset UTC timezone - using moment.js
+        let currentTimeUTC = response.dt;
+        let currentTimeZoneOffset = response.timezone;
+        let currentTimeZoneOffsetHours = currentTimeZoneOffset / 60 / 60;
+        let currentMoment = moment.unix(currentTimeUTC).utc().utcOffset(currentTimeZoneOffsetHours);
 
   renderCities();
 
-  $('#display-city').text(response.name);
+  getFiveDayForecast(event);
+
+  $('#header-text').text(response.name);
 
   let currentWeatherHTML = `
             <h3>${response.name} ${currentMoment.format("(MM/DD/YY)")}<img src="${currentWeatherIcon}"></h3>
@@ -189,33 +193,39 @@ getCurrentWeather = (event) => {
 
   let latitude = response.coord.lat;
   let longitude = response.coord.lon;
-  let uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + KeyAPI + "&lat=" + latitude + "&lon=" + longitude;
+  let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owmAPI;
 
-  fetch(uvQueryURL)
+  uvQueryURL = "https://cors-anywhere.herokuapp.com/" + uvQueryURL;
 
-    .then(handleErrors)
-    .then((response => response.json())
-    .then((response) => {
-      let uvIndex = response.value;
-      $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}"</span>`);
-      if (uvIndex>=0 && uvIndex<3){
-        $('#uvVal').attr("class", "uv-favorable");
-    } else if (uvIndex>=3 && uvIndex<8){
-        $('#uvVal').attr("class", "uv-moderate");
-    } else if (uvIndex>=8){
-        $('#uvVal').attr("class", "uv-severe");
-    }
-});
-})
+ fetch(uvQueryURL)
+        .then(handleErrors)
+        .then((response) => {
+            return response.json();
+        })
+        .then((response) => {
+            let uvIndex = response.value;
+            $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}</span>`);
+            if (uvIndex>=0 && uvIndex<3){
+                $('#uvVal').attr("class", "uv-favorable");
+            } else if (uvIndex>=3 && uvIndex<8){
+                $('#uvVal').attr("class", "uv-moderate");
+            } else if (uvIndex>=8){
+                $('#uvVal').attr("class", "uv-severe");
+            }
+        });
+    })
 }
 
 var getFiveDayForecast = (event) => {
-  let city = $("#search-input").val();
-
-  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + KeyAPI;
+  let city = $('#search-city').val();
+  // Set up URL for API search using forecast search
+  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&APPID=" + owmAPI;
+  // Fetch from API
   fetch(queryURL)
-    .then(handleErrors)
-    .then((response => response.json())
+      .then (handleErrors)
+      .then((response) => {
+          return response.json();
+      })
     .then((response) => {
 
       let fiveDayForecastHTML = `
