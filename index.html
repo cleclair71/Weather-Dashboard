@@ -14,15 +14,27 @@
 </head>
 
 <body>
-    <div id="header" class="jumbotron jumbotron-fluid text-container">
-        <h1 id="header-text" class="display-2"></h1>
-        <div id="artist-credit"></div>
+    <div id="header" class="jumbotron jumbotron-fluid text-container page-header flex-container">
+        <div class="container">
+            <div class="row">
+                <video autoplay muted loop src="Assets\Images\Lake\Lake-sunset\Lake-sunset.mp4"></video>
+    
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+    
+                    <div class="page-caption justify-content-start">
+                        <h1 id="header-text" class="page-title display-2">Weather <br> Dashboard</h1>
+                        <div id="artist-credit"></div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="content" class="container">
         <div class="row">
 
-            <div id="content-left" class="col-md-3">
+            <div id="content-right" class="col-md-3">
                 <form>
                     <label for="search-city">Search for a City:</label>
                     <div class="form-row">
@@ -35,7 +47,7 @@
                 <a id="clear-storage" href="#"></a> 
             </div>
 
-            <div id="content-right" class="col-md-9 pt-4"></div>
+            <div id="content-left" class="col-md-9 pt-4"></div>
             <div id="current-weather" class="border rounded"></div>
             <div id="five-day-forecast" class="mt-5"></div>
             </div>
