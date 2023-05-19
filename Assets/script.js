@@ -40,13 +40,19 @@ var getCurrentConditions = (event) => {
   $('#header-text').text(response.name);
 
   let currentWeatherHTML = `
-            <h3>${response.name}<img src="${currentWeatherIcon}"> </br> ${currentMoment.format("MM/DD/YY")}</h3>
-            <ul class="list-unstyled">
-                <li>Temperature: ${response.main.temp}&#8457;</li>
-                <li>Humidity: ${response.main.humidity}%</li>
-                <li>Wind Speed: ${response.wind.speed} mph</li>
-                <li id="uvIndex">UV Index:</li>
-            </ul>`;
+  <span style="font-size: 2em;color: #2713347b;">${currentMoment.format("MM/DD/YY")}</span>
+  <h3 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 3em; color: #2713347b; font-weight: 600;">${response.name}
+  
+  
+</h3>
+
+<ul class="list-unstyled" style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 1.5em; color: #271334;">
+<li class="weather-icon" style="font-size: 300%;"><img src="${currentWeatherIcon}" style="width: 2em;"></li>
+  <li>Temperature: ${response.main.temp}&#8457;</li>
+  <li>Humidity: ${response.main.humidity}%</li>
+  <li>Wind Speed: ${response.wind.speed} mph</li>
+  <li id="uvIndex">UV Index:</li>
+</ul>`;
 
   $('#current-weather').html(currentWeatherHTML);
 
@@ -101,15 +107,15 @@ var getFiveDayForecast = (event) => {
             // Only displaying mid-day forecasts
             if (thisMoment.format("HH:mm:ss") === "11:00:00" || thisMoment.format("HH:mm:ss") === "12:00:00" || thisMoment.format("HH:mm:ss") === "13:00:00") {
                 fiveDayForecastHTML += `
-                <div class="weather-card card m-2 p0">
-                    <ul class="list-unstyled p-3">
-                        <li>${thisMoment.format("MM/DD/YY")}</li>
-                        <li class="weather-icon"><img src="${iconURL}"></li>
-                        <li>Temp: ${dayData.main.temp}&#8457;</li>
-                        <br>
-                        <li>Humidity: ${dayData.main.humidity}%</li>
-                    </ul>
-                </div>`;
+                <div class="weather-card card m-2 p0" style="background-color: #ffffffb7; font-family: Montserrat, sans-serif; color: #271334fb;">
+        <ul class="list-unstyled p-3">
+            <li>${thisMoment.format("MM/DD/YY")}</li>
+            <li class="weather-icon" style="font-size: 200%;"><img src="${iconURL}" style="width: 2em;"></li>
+            <li>Temp: ${dayData.main.temp}&#8457;</li>
+            <br>
+            <li>Humidity: ${dayData.main.humidity}%</li>
+        </ul>
+    </div>`;
             }
         }
         // Build the HTML template
