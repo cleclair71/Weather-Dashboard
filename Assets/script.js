@@ -181,7 +181,7 @@ var getCurrentConditions = (event) => {
   $('#header-text').text(response.name);
 
   let currentWeatherHTML = `
-            <h3>${response.name} ${currentMoment.format("(MM/DD/YY)")}<img src="${currentWeatherIcon}"></h3>
+            <h3>${response.name}<img src="${currentWeatherIcon}"> </br> ${currentMoment.format("MM/DD/YY")}</h3>
             <ul class="list-unstyled">
                 <li>Temperature: ${response.main.temp}&#8457;</li>
                 <li>Humidity: ${response.main.humidity}%</li>

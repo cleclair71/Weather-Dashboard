@@ -105,12 +105,21 @@ video {
     margin-bottom: 5%;
 
 }
-#current-weather {
-    background: rgba(255, 255, 255, 0.8);  
+#current-weather { 
     display: block;
    margin: 0 auto;
     width: 10% !important;
     text-align: center;
+    overflow: hidden;
+    background-color: #ffffffb7;
+  repeat center center fixed; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 2px #663b54;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  color: #000000;
+  padding: 6px;
 }
 
 #clear-storage{
@@ -122,7 +131,7 @@ video {
 
 .weather-card{
     width: 12rem;
-    background-color: #0275d8;
+    background-color: #ffffffb7;
     color: rgb(12, 5, 5);
     text-align: center;
     box-shadow: 0px 4px 8px 2px #663b54;
