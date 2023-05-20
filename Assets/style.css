@@ -30,7 +30,7 @@ video {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
@@ -38,23 +38,24 @@ video {
     object-fit: cover;
 }
 .container {
-   
     width: 100%;
     height: 100%;
    
 }
 .page-caption {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     z-index: 1;
     margin: 3%;
     animation: slide-in 1000ms;
-    font-family: 'Overpass', sans-serif;
-    font-size: 56px;
-    line-height: 1;
-    color: #fff;
-    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    font-size: 26px;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -2px;
+  text-shadow: 0px 4px 8px 2px #47273a !important;
 }
 #content {
     position: relative;
@@ -114,7 +115,7 @@ input {
     font-family: Arial;
     color: rgba(255, 255, 255, 0.253);
     width: 100%;
-    overflow: hidden;
+    
 }
 
 #content-left {
@@ -125,12 +126,14 @@ input {
     margin-left: auto;
 }
 .page-title {
-    animation: slide-in 1000ms;
+    text-shadow: 0px 4px 8px 2px #663b54;
+    
+
 }
 .jumbotron {
     padding: 1rem;
     border-radius: 0;
-    height: 60vh;
+    height: 100vh;
 }
 
 
@@ -165,10 +168,18 @@ h2 {
     margin: auto;
 }
 #clear-storage{
-    color:grey;
+    color:rgba(255, 255, 255, 0.279);
     text-decoration: none;
-    font-size:.75em;
-    margin: .5em 0em 0em .5em;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10em;
+    margin-left: .2em;
+    text-transform: uppercase;
+}
+
+#clear-storage:hover{
+    color: #ffffff;
+   
 }
 
 .weather-card{
@@ -240,19 +251,23 @@ h2 {
     #content, #content-right {
         position: static;
         margin: 0 auto;
+        padding-top: 10%;
+        width:90%;
     }
     #search-city{
         width:100%;
+        margin: auto;
+        
     }
     .weather-card {
         width: 100%;
     }
     .jumbotron {
-        height: auto;
+        height: 100vh;
     }
     #current-container {
         width: 100%;
-        padding: 10px;
+        
     }
     #five-day-forecast {
         width: 100%;
@@ -267,7 +282,7 @@ h2 {
         height: 100%;
     }
     #fiveDayForecastUl{
-        margin-top: 40%;
+        margin-top: 100%;
         justify-content: center;
     }
     .page-caption {
@@ -275,5 +290,9 @@ h2 {
     }
     h2 {
         display: none;
+    }
+    .weather-card {
+        width: 100%;
+        justify-content: center;
     }
 }
